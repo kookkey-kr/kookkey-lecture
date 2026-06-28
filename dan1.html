@@ -1,0 +1,1540 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KOOKKEY THE LECTURE — 단군신화 — 작자 미상</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans+KR:wght@300;400;500;700;900&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:         #FDF7F4;
+  --white:      #FFFFFF;
+  --primary:    #1A1A1A;
+  --primary-deep:#9E5070;
+  --dark:       #2D1F26;
+  --accent-bg:  #FCE8EF;
+  --accent-gold:#C77B94;
+  --ink:        #1A1A1A;
+  --ink-mid:    #3D3D3D;
+  --ink-soft:   #7A6A70;
+  --border:     rgba(199,123,148,0.12);
+  --shadow:     rgba(199,123,148,0.07);
+  --naver:      #03C75A;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 300;
+  font-size: 17px;
+  line-height: 1.9;
+  -webkit-font-smoothing: antialiased;
+}
+body::after {
+  content: '';
+  position: fixed; inset: 0; pointer-events: none; z-index: 9999;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");
+  opacity: 0.3;
+}
+.wrap { max-width: 860px; margin: 0 auto; padding: 0 52px; }
+
+/* ── 강조 표시 ── */
+.hl-pink  { background: linear-gradient(transparent 55%, #FCE8EF 45%); padding: 0 3px; }
+.hl-yellow{ background: linear-gradient(transparent 55%, #FFF5B7 45%); padding: 0 3px; }
+.hl-green { background: linear-gradient(transparent 55%, #C8F5C0 45%); padding: 0 3px; }
+.hl-blue  { background: linear-gradient(transparent 55%, #C8E6FF 45%); padding: 0 3px; }
+.ul { text-decoration: underline; text-decoration-color: var(--naver); text-decoration-thickness: 2px; text-underline-offset: 3px; }
+.ul-gold { text-decoration: underline; text-decoration-color: #C77B94; text-decoration-thickness: 2px; text-underline-offset: 3px; }
+.kw { font-weight: 700; color: var(--primary); }
+.strike { text-decoration: line-through; color: var(--ink-soft); text-decoration-color: #C0392B; text-decoration-thickness: 2px; }
+.badge-num {
+  display: inline-block; background: #C77B94; color: #FFFFFF;
+  font-family: 'Bebas Neue', sans-serif; font-size: 0.9em; letter-spacing: 0.06em;
+  padding: 1px 9px; border-radius: 3px; vertical-align: middle;
+}
+
+/* ── HERO ── */
+.hero { background: var(--dark); overflow: hidden; position: relative; }
+.hero-inner {
+  max-width: 860px; margin: 0 auto;
+  padding: 88px 52px 80px; position: relative; z-index: 1;
+}
+.hero-bg-word {
+  position: absolute; bottom: -40px; right: 20px;
+  font-family: 'Bebas Neue', sans-serif; font-size: 420px;
+  color: rgba(199,123,148,0.06); line-height: 1;
+  pointer-events: none; user-select: none;
+}
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: #C77B94; color: #FFFFFF;
+  font-weight: 700; font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase;
+  padding: 7px 18px; border-radius: 2px; margin-bottom: 28px;
+}
+.hero-badge-dot { width: 6px; height: 6px; background: #2D1F26; border-radius: 50%; }
+.hero-meta {
+  font-size: 11px; font-weight: 700; letter-spacing: 0.28em;
+  color: rgba(199,123,148,0.6); text-transform: uppercase;
+  margin-bottom: 16px;
+}
+.hero-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(88px, 14vw, 160px);
+  line-height: 0.9; letter-spacing: 0.04em;
+  color: white; margin-bottom: 4px;
+}
+.hero-poet {
+  display: flex; align-items: baseline; gap: 16px;
+  margin-bottom: 16px; margin-top: 2px;
+}
+.hero-poet-kr {
+  font-family: 'Noto Sans KR', sans-serif; font-weight: 900;
+  font-size: clamp(20px, 3vw, 28px); color: #C77B94;
+  letter-spacing: 0.06em;
+}
+.hero-poet-hanja {
+  font-family: 'DM Serif Display', serif; font-style: italic;
+  font-size: clamp(16px, 2.2vw, 20px);
+  color: rgba(199,123,148,0.5); letter-spacing: 0.08em;
+}
+.hero-poet-desc {
+  font-size: 13.5px; color: rgba(255,255,255,0.45);
+  line-height: 1.8; margin-bottom: 36px; letter-spacing: 0.01em;
+}
+.hero-insight-line {
+  font-family: 'DM Serif Display', serif; font-style: italic;
+  font-size: clamp(15px, 2.2vw, 19px);
+  color: rgba(255,255,255,0.75);
+  border-left: 3px solid #C77B94; padding-left: 20px;
+  line-height: 1.7; max-width: 540px;
+}
+
+/* ── SECTION ── */
+.section { padding: 88px 0; border-bottom: 1px solid var(--border); }
+.section-white { background: var(--white); }
+.section-dark { background: var(--dark); }
+.section-chalk { background: var(--bg); }
+.eyebrow {
+  font-family: 'Bebas Neue', sans-serif; font-size: 12px;
+  letter-spacing: 0.32em; color: #C77B94; margin-bottom: 12px; text-transform: uppercase;
+}
+.eyebrow-navy {
+  font-family: 'Bebas Neue', sans-serif; font-size: 12px;
+  letter-spacing: 0.32em; color: #C77B94; margin-bottom: 12px; text-transform: uppercase;
+}
+.sec-title {
+  font-family: 'Noto Sans KR', sans-serif; font-weight: 900;
+  font-size: clamp(21px, 3.5vw, 29px); color: var(--ink);
+  line-height: 1.38; margin-bottom: 10px;
+}
+.sec-title em { font-style: normal; color: #C77B94; }
+.sec-title-white { color: white; }
+.sec-title-white em { color: #C77B94; }
+.divider { width: 40px; height: 3px; background: #C77B94; border-radius: 2px; margin: 20px 0 32px; }
+.body-p { font-size: 16px; color: var(--ink-mid); line-height: 2.1; margin-bottom: 22px; }
+.body-p:last-child { margin-bottom: 0; }
+.body-p-dark { font-size: 15px; color: #FFFFFF; line-height: 2.1; margin-bottom: 22px; }
+
+/* ── 스탯 스트립 ── */
+.stat-strip { background: var(--primary); }
+.stat-strip-inner {
+  max-width: 860px; margin: 0 auto; padding: 0 52px;
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 1px; background: rgba(255,255,255,0.1);
+}
+.stat-item { padding: 34px 20px; background: var(--primary); text-align: center; }
+.stat-num { font-family: 'Bebas Neue', sans-serif; font-size: 52px; color: #C77B94; line-height: 1; margin-bottom: 6px; }
+.stat-label { font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.55); line-height: 1.6; }
+
+/* ── 시 원문 블록 ── */
+.poem-block {
+  background: var(--dark);
+  border-radius: 16px; overflow: hidden;
+  margin: 36px 0; box-shadow: 0 8px 32px rgba(199,123,148,0.20);
+}
+.poem-block-header {
+  background: rgba(199,123,148,0.12); border-bottom: 1px solid rgba(199,123,148,0.2);
+  padding: 16px 32px; display: flex; align-items: center; gap: 10px;
+}
+.poem-block-dot { width: 8px; height: 8px; background: #C77B94; border-radius: 50%; }
+.poem-block-label { font-size: 11px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(199,123,148,0.8); }
+.poem-block-body { padding: 36px 40px; }
+.poem-stanza {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(15px, 2.1vw, 18px);
+  color: rgba(255,255,255,0.88);
+  line-height: 2.2; margin-bottom: 28px;
+  letter-spacing: 0.01em;
+}
+.poem-stanza:last-child { margin-bottom: 0; }
+.poem-stanza em { color: #C77B94; font-style: normal; }
+
+/* ── HL BOX ── */
+.hl-box {
+  background: #FCE8EF; border-left: 4px solid #C77B94;
+  padding: 22px 28px; border-radius: 0 12px 12px 0;
+  margin: 32px 0; font-size: 15px; color: var(--ink-mid); line-height: 2;
+}
+.hl-box strong { color: var(--primary); font-weight: 700; }
+
+/* ── BIG QUOTE ── */
+.big-quote {
+  background: var(--primary); color: white;
+  margin: 40px 0; padding: 52px 48px;
+  border-radius: 18px; position: relative; overflow: hidden;
+}
+.big-quote::before {
+  content: '\201C'; position: absolute; top: -28px; left: 16px;
+  font-family: 'Bebas Neue', sans-serif; font-size: 200px;
+  color: rgba(199,123,148,0.1); line-height: 1;
+}
+.big-quote-text {
+  font-family: 'DM Serif Display', serif; font-style: italic;
+  font-size: clamp(17px, 2.6vw, 24px); line-height: 1.75;
+  position: relative; z-index: 1;
+}
+.big-quote-src {
+  margin-top: 16px; font-size: 11px; font-weight: 700;
+  letter-spacing: 0.2em; text-transform: uppercase;
+  color: rgba(255,255,255,0.4); position: relative; z-index: 1;
+}
+
+/* ── CALLOUT ── */
+.callout {
+  display: flex; gap: 20px; align-items: flex-start;
+  background: var(--white); border: 1px solid var(--border);
+  border-radius: 14px; padding: 26px 28px;
+  margin: 24px 0; box-shadow: 0 2px 10px var(--shadow);
+}
+.callout-icon {
+  font-family: 'Bebas Neue', sans-serif; font-size: 46px;
+  color: #C77B94; line-height: 0.9; min-width: 44px; flex-shrink: 0;
+}
+.callout-lbl {
+  font-size: 10px; font-weight: 700; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--primary-deep); margin-bottom: 6px;
+}
+.callout-ttl { font-weight: 700; font-size: 15.5px; color: var(--ink); margin-bottom: 8px; line-height: 1.4; }
+.callout-body { font-size: 15px; color: var(--ink-soft); line-height: 1.95; }
+
+/* ── 섹션 타이틀 태그 ── */
+.section-tag {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: #C77B94; color: #FFFFFF;
+  font-family: 'Bebas Neue', sans-serif; font-size: 13px;
+  letter-spacing: 0.18em; padding: 6px 16px; border-radius: 2px;
+  margin-bottom: 28px;
+}
+
+/* ── 포인트 리스트 ── */
+.point-list { margin: 32px 0; display: flex; flex-direction: column; gap: 14px; }
+.point-item {
+  display: flex; gap: 18px; align-items: flex-start;
+  background: var(--white); border: 1px solid var(--border);
+  border-radius: 12px; padding: 22px 26px;
+  box-shadow: 0 2px 8px var(--shadow);
+}
+.point-num {
+  font-family: 'Bebas Neue', sans-serif; font-size: 38px;
+  color: #C77B94; line-height: 0.9; min-width: 36px; flex-shrink: 0; opacity: 0.8;
+}
+.point-ttl { font-weight: 700; font-size: 15.5px; color: var(--primary); margin-bottom: 6px; line-height: 1.4; }
+.point-body { font-size: 15px; color: var(--ink-soft); line-height: 1.9; }
+
+/* ── 장면 카드 ── */
+.scene-card {
+  background: var(--white); border: 1px solid var(--border);
+  border-radius: 18px; overflow: hidden;
+  margin: 28px 0; box-shadow: 0 4px 20px var(--shadow);
+}
+.scene-card-header {
+  background: #C77B94; padding: 18px 28px;
+  display: flex; align-items: center; gap: 14px;
+}
+.scene-card-header-num {
+  font-family: 'Bebas Neue', sans-serif; font-size: 42px;
+  color: rgba(17,17,17,0.4); line-height: 0.9; flex-shrink: 0;
+}
+.scene-card-header-info {}
+.scene-card-header-label {
+  font-size: 10px; font-weight: 700; letter-spacing: 0.2em;
+  text-transform: uppercase; color: rgba(17,17,17,0.5); margin-bottom: 4px;
+}
+.scene-card-header-title { font-weight: 700; font-size: 15px; color: #2D1F26; line-height: 1.4; }
+.scene-card-body { padding: 30px 32px; }
+.scene-poem {
+  background: var(--bg); border-left: 3px solid #C77B94;
+  padding: 20px 24px; border-radius: 0 10px 10px 0;
+  margin-bottom: 24px;
+  font-family: 'DM Serif Display', serif; font-style: italic;
+  font-size: 17px; color: var(--dark); line-height: 2.0;
+}
+
+/* ── 오개념 교정 카드 ── */
+.misconception-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 28px 0; }
+.misconception-card { border-radius: 12px; overflow: hidden; box-shadow: 0 2px 10px var(--shadow); }
+.mc-head { padding: 16px 22px; }
+.mc-head.wrong { background: #2D1F26; }
+.mc-head.right  { background: var(--primary); }
+.mc-head-label {
+  font-size: 10px; font-weight: 700; letter-spacing: 0.2em;
+  text-transform: uppercase; color: rgba(255,255,255,0.6); margin-bottom: 4px;
+}
+.mc-head-title { font-weight: 700; font-size: 14px; color: white; line-height: 1.4; }
+.mc-body { background: var(--white); padding: 18px 22px; border: 1px solid var(--border); border-top: none; border-radius: 0 0 12px 12px; }
+.mc-body-text { font-size: 13.5px; color: var(--ink-mid); line-height: 1.85; }
+.mc-body-text strong { color: var(--primary-deep); font-weight: 700; }
+.mc-body-text strong.ok { color: var(--primary); }
+
+/* ── 티키타카 대화 ── */
+.tiktaka-wrap { margin: 28px 0; display: flex; flex-direction: column; gap: 12px; }
+.talk-bubble { display: flex; gap: 12px; align-items: flex-start; }
+.talk-avatar {
+  width: 36px; height: 36px; border-radius: 50%; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Bebas Neue', sans-serif; font-size: 11px; letter-spacing: 0.03em; font-weight: 700;
+  background: var(--accent-bg); color: var(--primary-deep);
+  border: 1.5px solid var(--border);
+}
+.talk-avatar.teacher-av { background: #C77B94; color: #2D1F26; }
+.talk-text-wrap { flex: 1; }
+.talk-speaker {
+  font-size: 11px; font-weight: 700; letter-spacing: 0.04em;
+  color: var(--primary-deep);
+  margin-bottom: 6px; padding-left: 2px;
+  font-style: italic;
+}
+.talk-speaker.teacher-sp { color: #C77B94; font-style: normal; font-weight: 900; letter-spacing: 0.02em; }
+.talk-text {
+  background: var(--white); border: 1px solid var(--border);
+  border-radius: 4px 14px 14px 14px;
+  padding: 14px 18px; font-size: 15px;
+  color: var(--ink-mid); line-height: 1.9;
+  box-shadow: 0 1px 4px var(--shadow);
+}
+.talk-text strong { color: var(--primary-deep); font-weight: 700; }
+
+/* ── 판서 박스 ── */
+.board {
+  background: #2D1F26; border-left: 3px solid #03C75A; border-top: 1px solid rgba(3,199,90,0.18); border-right: 1px solid rgba(3,199,90,0.18); border-bottom: 1px solid rgba(3,199,90,0.18);
+  border-radius: 14px; padding: 28px 34px;
+  margin: 28px 0; position: relative; overflow: hidden;
+}
+.board::before {
+  content: 'BOARD';
+  position: absolute; top: -8px; right: 16px;
+  font-family: 'Bebas Neue', sans-serif; font-size: 80px;
+  color: rgba(3,199,90,0.04); line-height: 1;
+}
+.board-label {
+  font-family: 'Bebas Neue', sans-serif; font-size: 11px; font-weight: 700;
+  letter-spacing: 0.28em; color: #03C75A;
+  text-transform: uppercase; margin-bottom: 16px; display: flex; align-items: center; gap: 10px;
+}
+.board-label::before {
+  content: ''; width: 20px; height: 1px; background: rgba(3,199,90,0.4);
+}
+.board-content { font-size: 15px; color: #FFFFFF; line-height: 2.1; }
+.board * { color: #FFFFFF; }
+.board-content strong { color: #03C75A; font-weight: 700; }
+.board-row { display: flex; gap: 10px; margin-bottom: 8px; align-items: flex-start; }
+.board-row:last-child { margin-bottom: 0; }
+.board-row-key {
+  font-family: 'Bebas Neue', sans-serif; font-size: 12px;
+  letter-spacing: 0.1em; color: rgba(199,123,148,0.6); font-weight: 700;
+  min-width: 70px; flex-shrink: 0; padding-top: 2px;
+}
+.board-row-val { font-size: 14.5px; color: #FFFFFF; line-height: 1.9; }
+
+/* 판서 내부 강조 */
+.board .hl-pink,
+.board .hl-yellow,
+.board .hl-green,
+.board .hl-blue {
+  background: none; padding: 0;
+  text-decoration: underline;
+  text-decoration-color: rgba(255,255,255,0.6);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+  color: #FFFFFF;
+}
+.board .ul { text-decoration-color: #03C75A; text-decoration-thickness: 2px; }
+.board .correct {
+  text-decoration: underline;
+  text-decoration-color: #03C75A;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+.board .trap {
+  text-decoration: underline;
+  text-decoration-color: #C77B94;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+
+/* ── 출제 연결 지도 ── */
+.exam-table {
+  background: var(--white); border: 1px solid var(--border);
+  border-radius: 18px; overflow: hidden;
+  margin: 32px 0; box-shadow: 0 4px 20px var(--shadow);
+}
+.exam-table-header {
+  background: #C77B94; padding: 20px 28px;
+  display: flex; align-items: center; gap: 12px;
+}
+.exam-table-header-title { font-weight: 700; font-size: 14px; color: #2D1F26; }
+.exam-table-header-sub { font-size: 11px; color: rgba(17,17,17,0.4); margin-top: 2px; }
+.exam-row {
+  display: grid; grid-template-columns: 160px 1fr;
+  border-bottom: 1px solid var(--border);
+}
+.exam-row:last-child { border-bottom: none; }
+.exam-row:nth-child(even) .exam-val { background: var(--bg); }
+.exam-key {
+  padding: 18px 20px 18px 28px; border-right: 1px solid var(--border);
+  font-size: 11px; font-weight: 700; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--primary-deep); line-height: 1.6;
+  display: flex; align-items: center;
+}
+.exam-val { padding: 18px 24px; font-size: 14px; color: var(--ink-mid); line-height: 1.8; }
+.exam-val strong { color: var(--primary); font-weight: 700; }
+.exam-pct {
+  display: inline-block; background: #C77B94; color: #2D1F26;
+  font-family: 'Bebas Neue', sans-serif; font-size: 13px;
+  letter-spacing: 0.08em; padding: 2px 10px; border-radius: 2px;
+  margin-left: 6px; vertical-align: middle;
+}
+
+/* ── 수준별 분기 ── */
+.level-grid { display: grid; grid-template-columns: 1fr; gap: 16px; margin: 32px 0; max-width: 680px; }
+.level-card {
+  background: var(--white); border: 1px solid var(--border);
+  border-radius: 14px; overflow: hidden; box-shadow: 0 2px 10px var(--shadow);
+}
+.level-head { padding: 18px 28px; display: flex; align-items: center; gap: 16px; }
+.level-head.top    { background: var(--dark); color: #FFFFFF; }
+.level-head.mid    { background: var(--primary); color: #FFFFFF; }
+.level-head.low    { background: #C77B94; color: #2D1F26; }
+.level-grade {
+  font-family: 'Bebas Neue', sans-serif; font-size: 32px;
+  letter-spacing: 0.12em; line-height: 1;
+}
+.level-head.top .level-grade { color: #FFFFFF; }
+.level-head.mid .level-grade { color: #FFFFFF; }
+.level-head.low .level-grade { color: #2D1F26; }
+.level-name { font-size: 12px; font-weight: 700; letter-spacing: 0.06em; }
+.level-head.top .level-name { color: rgba(255,255,255,0.75); }
+.level-head.mid .level-name { color: rgba(255,255,255,0.75); }
+.level-head.low .level-name { color: rgba(17,17,17,0.6); }
+.level-body { padding: 22px 28px; display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.level-row { font-size: 13.5px; color: var(--ink-mid); line-height: 1.75; background: var(--white); border: 1px solid var(--border); border-radius: 10px; padding: 14px 16px; }
+.level-row-lbl {
+  font-size: 9px; font-weight: 700; letter-spacing: 0.16em;
+  text-transform: uppercase; color: #C77B94; margin-bottom: 5px;
+}
+
+/* ── 오개념 분석 카드 (G03) ── */
+.misconception-analysis { margin: 32px 0; display: flex; flex-direction: column; gap: 18px; }
+.ma-item {
+  background: var(--white); border: 1px solid var(--border);
+  border-radius: 14px; overflow: hidden; box-shadow: 0 2px 8px var(--shadow);
+}
+.ma-head {
+  background: #FCE8EF; border-bottom: 1px solid var(--border);
+  padding: 16px 24px; display: flex; align-items: flex-start; gap: 14px;
+}
+.ma-num {
+  font-family: 'Bebas Neue', sans-serif; font-size: 36px;
+  color: #C77B94; line-height: 0.9; min-width: 32px; flex-shrink: 0;
+}
+.ma-head-info {}
+.ma-head-tag {
+  display: inline-block; background: #9E5070; color: white;
+  font-size: 9px; font-weight: 700; letter-spacing: 0.16em;
+  text-transform: uppercase; padding: 3px 10px; border-radius: 2px; margin-bottom: 6px;
+}
+.ma-head-title { font-weight: 700; font-size: 14.5px; color: var(--ink); line-height: 1.4; }
+.ma-body { padding: 18px 24px; }
+.ma-row { margin-bottom: 10px; }
+.ma-row:last-child { margin-bottom: 0; }
+.ma-row-lbl {
+  font-size: 9px; font-weight: 700; letter-spacing: 0.15em;
+  text-transform: uppercase; color: var(--primary-deep); margin-bottom: 4px;
+}
+.ma-row-text { font-size: 13.5px; color: var(--ink-mid); line-height: 1.85; }
+
+/* ── G07 핵심 포인트 ── */
+.tip-grid { display: grid; grid-template-columns: 1fr; gap: 20px; margin: 32px 0; }
+.tip-card {
+  background: var(--white); border: 1px solid var(--border);
+  border-radius: 14px; overflow: hidden; box-shadow: 0 2px 10px var(--shadow);
+}
+.tip-card-head {
+  background: #C77B94; padding: 14px 20px;
+  display: flex; align-items: center; gap: 10px;
+}
+.tip-card-head-num {
+  font-family: 'Bebas Neue', sans-serif; font-size: 32px;
+  color: rgba(199,123,148,0.3); line-height: 1; flex-shrink: 0;
+}
+.tip-card-head-title { font-weight: 700; font-size: 13px; color: white; line-height: 1.4; }
+.tip-card-body { padding: 18px 20px; }
+.tip-card-row { margin-bottom: 10px; }
+.tip-card-row:last-child { margin-bottom: 0; }
+.tip-card-row-lbl {
+  font-size: 9px; font-weight: 700; letter-spacing: 0.15em;
+  text-transform: uppercase; color: #C77B94; margin-bottom: 3px;
+}
+.tip-card-row-text { font-size: 13px; color: var(--ink-mid); line-height: 1.8; }
+
+/* ── KP SECTION (키포인트) ── */
+.kp-section { background: #2D1F26; padding: 96px 0; }
+.kp-eyebrow {
+  font-family: 'Bebas Neue', sans-serif; font-size: 12px;
+  letter-spacing: 0.32em; color: #C77B94; margin-bottom: 14px;
+}
+.kp-heading {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(42px, 6.5vw, 70px); color: white;
+  line-height: 0.95; margin-bottom: 52px; letter-spacing: 0.03em;
+}
+.kp-heading span { color: #C77B94; }
+.kp-list { display: flex; flex-direction: column; gap: 0; }
+.kp-item {
+  display: flex; gap: 28px; align-items: flex-start;
+  padding: 36px 0; border-bottom: 1px solid rgba(255,255,255,0.07);
+}
+.kp-item:last-child { border-bottom: none; }
+.kp-num {
+  font-family: 'Bebas Neue', sans-serif; font-size: 68px;
+  color: #C77B94; line-height: 0.85; min-width: 60px; opacity: 0.3;
+}
+.kp-tag {
+  display: inline-block; background: #C77B94; color: #FFFFFF;
+  font-size: 10px; font-weight: 700; letter-spacing: 0.16em;
+  text-transform: uppercase; padding: 4px 12px; border-radius: 2px; margin-bottom: 10px;
+}
+.kp-title { font-weight: 700; font-size: 16.5px; color: white; margin-bottom: 10px; line-height: 1.5; }
+.kp-body { font-size: 14px; color: rgba(255,255,255,0.5); line-height: 1.9; }
+
+/* ── CLOSING ── */
+.closing {
+  background: linear-gradient(135deg, #C77B94 0%, #2D1F26 100%);
+  padding: 96px 52px; text-align: center; position: relative; overflow: hidden;
+}
+.closing::before {
+  content: 'MYTH'; position: absolute;
+  font-family: 'Bebas Neue', sans-serif; font-size: 360px;
+  color: rgba(199,123,148,0.04);
+  top: 50%; left: 50%; transform: translate(-50%, -50%);
+  white-space: nowrap; letter-spacing: 0.1em;
+}
+.closing-text {
+  font-family: 'DM Serif Display', serif; font-style: italic;
+  font-size: clamp(20px, 3.2vw, 34px); color: white; line-height: 1.65;
+  max-width: 580px; margin: 0 auto 24px; position: relative; z-index: 1;
+}
+.closing-text em { color: #C77B94; font-style: normal; }
+.closing-question {
+  font-size: 15px; color: rgba(255,255,255,0.6); line-height: 2.0;
+  max-width: 520px; margin: 0 auto 28px; position: relative; z-index: 1;
+}
+.closing-sub {
+  font-size: 11px; font-weight: 700; letter-spacing: 0.22em;
+  text-transform: uppercase; color: rgba(255,255,255,0.3); position: relative; z-index: 1;
+}
+
+/* ── Pre-Class Insight 배너 ── */
+.pre-insight {
+  background: var(--primary); position: relative; overflow: hidden;
+}
+.pre-insight-inner {
+  max-width: 860px; margin: 0 auto; padding: 36px 52px;
+  display: flex; align-items: center; gap: 28px;
+}
+.pre-insight-label {
+  font-family: 'Bebas Neue', sans-serif; font-size: 13px;
+  letter-spacing: 0.28em; color: rgba(255,255,255,0.75);
+  text-transform: uppercase; white-space: nowrap; flex-shrink: 0;
+}
+.pre-insight-divider {
+  width: 1px; height: 48px; background: rgba(255,255,255,0.3); flex-shrink: 0;
+}
+.pre-insight-text {
+  font-size: 15px; color: white; line-height: 1.85; font-weight: 500;
+}
+.pre-insight-text strong { color: #FFF5B7; font-weight: 700; }
+
+@media (max-width: 700px) {
+  .pre-insight-inner { flex-direction: column; gap: 16px; padding: 28px 24px; }
+  body { font-size: 16px; }
+  .body-p { font-size: 15.5px; }
+  .talk-text { font-size: 15px; }
+  .tip-card-row-text { font-size: 15px; }
+  .wrap { padding: 0 24px; }
+  .hero-inner { padding: 64px 24px 60px; }
+  .stat-strip-inner { padding: 0 24px; grid-template-columns: 1fr; }
+  .misconception-wrap { grid-template-columns: 1fr; }
+  .level-grid { grid-template-columns: 1fr; }
+  .closing { padding: 64px 24px; }
+  .exam-row { grid-template-columns: 1fr; }
+  .exam-key { border-right: none; border-bottom: 1px solid var(--border); }
+}
+
+@media print {
+  @page { margin: 16mm 14mm; size: A4; }
+  body {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    background: var(--bg) !important;
+  }
+  body::after { display: none; }
+  .hero-bg-word { opacity: 0.04; }
+  .section, .section-white, .section-chalk { page-break-inside: avoid; }
+  .scene-card, .board, .misconception-wrap, .level-grid, .exam-table, .tiktaka-wrap { page-break-inside: avoid; }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══ HERO ═══ -->
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-bg-word">檀</div>
+    <div class="hero-badge">
+      <span class="hero-badge-dot"></span>
+      KOOKKEY THE LECTURE
+    </div>
+    <div class="hero-meta">고전산문 · 건국 신화 · 삼국유사 기이편</div>
+    <div class="hero-title">단군신화</div>
+    <div class="hero-poet">
+      <span class="hero-poet-kr">작자 미상</span>
+      <span class="hero-poet-hanja">일연 撰 · 삼국유사</span>
+    </div>
+    <div class="hero-poet-desc">
+      우리 민족 최초의 건국 신화로, 고조선의 탄생 과정과<br>
+      홍익인간의 통치 이념을 담은 민족 정체성의 원전
+    </div>
+    <div class="hero-insight-line">
+      하늘의 뜻과 땅의 열망이 만나 — 한 민족의 뿌리가 태어나다
+    </div>
+  </div>
+</div>
+
+<!-- Pre-Class Insight 배너 -->
+<div class="pre-insight">
+  <div class="pre-insight-inner">
+    <div class="pre-insight-label">Pre-Class Insight</div>
+    <div class="pre-insight-divider"></div>
+    <div class="pre-insight-text">
+      이 신화에서 곰이 사람이 되고 하늘의 신이 내려온다는 비현실적 사건 뒤에는 <strong>고대 부족 사회의 치열한 권력 결합과 정당성 확보의 논리</strong>가 숨어 있다는 것을 먼저 잡아야 한다.
+    </div>
+  </div>
+</div>
+
+<!-- ═══ [시작] ═══ -->
+<div class="section section-white">
+  <div class="wrap">
+    <div class="section-tag">시작</div>
+    <div class="scene-card">
+      <div class="scene-card-header">
+        <div class="scene-card-header-num">★</div>
+        <div class="scene-card-header-info">
+          <div class="scene-card-header-label">탐구 질문</div>
+          <div class="scene-card-header-title">신이 하늘에서 내려오고 곰이 사람이 되었다는 이야기 뒤에, 출제자가 진짜 묻고 싶은 것은 무엇인가?</div>
+        </div>
+      </div>
+      <div class="scene-card-body">
+        <div class="scene-poem">환웅은 늘 인간 세상에 뜻을 품고 속세로 내려가 사람들을 구원하고자 했다.</div>
+        <p class="body-p">
+          <span class="hl-pink">하늘의 신이 편안한 천상을 뒤로하고 불완전한 인간 세상으로 스스로 내려오겠다고 한다?</span>
+        </p>
+        <p class="body-p">
+          보통 신화에서 신은 죄를 짓고 쫓겨나거나 명령을 받아 내려오는 것이 일반적인데, 환웅은 <span class="kw">자발적으로 인간을 사랑하여 하강</span>합니다. 이 한 문장에 고조선 건국의 도덕적 정당성 전부가 압축되어 있어요.
+        </p>
+        <p class="body-p">
+          오늘 우리가 추적할 것은 딱 하나예요. <span class="hl-green">신화의 비현실적인 사건들이 당시의 어떤 역사적 현실을 상징하는지</span>, 그리고 출제자가 그 상징을 어떻게 함정으로 바꾸는지 끝까지 파헤쳐 봐요.
+        </p>
+      </div>
+    </div>
+    <div class="board">
+      <div class="board-label">판서</div>
+      <div class="board-content">
+        <strong>오늘의 탐구 질문:</strong> 신화적 사건 뒤에 숨겨진 역사적 현실을 읽어내는 힘
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ 스탯 스트립 ═══ -->
+<div class="stat-strip">
+  <div class="stat-strip-inner">
+    <div class="stat-item">
+      <div class="stat-num">40%</div>
+      <div class="stat-label">천손 강림 · 홍익인간<br>건국 이념의 상징</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">35%</div>
+      <div class="stat-label">통과 의례<br>곰과 호랑이의 금기</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">25%</div>
+      <div class="stat-label">산신 좌정<br>결말의 상징성</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ G01 작품 핵심 좌표 ═══ -->
+<div class="section section-white">
+  <div class="wrap">
+    <div class="eyebrow-navy">G01 · 작품 핵심 좌표</div>
+    <h2 class="sec-title">이 작품을 이해하는 <em>핵심 좌표</em></h2>
+    <div class="divider"></div>
+
+    <div class="callout">
+      <div class="callout-icon">A</div>
+      <div>
+        <div class="callout-lbl">출제 이력 및 주종 유형</div>
+        <div class="callout-ttl">신화적 모티프의 역사적 상징성을 묻는 유형</div>
+        <div class="callout-body">
+          이 작품은 고전산문(건국 신화) 중에서 <span class="kw">신화적 사건이 상징하는 역사적 현실</span>을 묻는 유형으로 가장 빈번하게 출제됩니다. 출제자는 주로 환웅의 강림 동기, 곰과 호랑이의 통과 의례, 풍백·우사·운사의 사회적 의미, 산신 좌정의 결말 처리 등을 중심으로 선택지를 설계합니다. 특히 다른 건국 신화(주몽 신화)나 적강 모티프 작품과 묶어 <span class="hl-pink">강림 동기의 자발성 여부를 비교</span>하는 복합 지문이 자주 출제됩니다.
+        </div>
+      </div>
+    </div>
+
+    <div class="callout">
+      <div class="callout-icon">B</div>
+      <div>
+        <div class="callout-lbl">수업 난도 등급</div>
+        <div class="callout-ttl">중상 — 표면과 이면의 간극이 큰 작품</div>
+        <div class="callout-body">
+          신화의 표면적 사건(곰이 사람이 됨, 하늘에서 내려옴)은 쉬워 보이지만, <span class="kw">각 모티프가 상징하는 역사적·사회적 의미</span>로 치환하여 읽어내는 데 난도가 있습니다. 특히 환웅의 자발적 강림을 고전소설의 적강과 혼동하거나, 산신 좌정을 천상 복귀로 오독하는 학생이 많습니다.
+        </div>
+      </div>
+    </div>
+
+    <div class="eyebrow-navy" style="margin-top: 40px;">[단군신화] 필수 포인트 3가지</div>
+    <div class="point-list">
+      <div class="point-item">
+        <div class="point-num">01</div>
+        <div>
+          <div class="point-ttl">천손 강림의 정당성과 홍익인간 이념</div>
+          <div class="point-body">환웅의 자발적 하강과 환인의 승인, 천부인의 수여가 결합하여 <span class="hl-yellow">지배 권력의 신성한 정당성</span>을 구축하는 구조를 파악해야 합니다. 가장 핵심적인 출제 요소입니다.</div>
+        </div>
+      </div>
+      <div class="point-item">
+        <div class="point-num">02</div>
+        <div>
+          <div class="point-ttl">통과 의례의 성패와 토착 세력의 통합</div>
+          <div class="point-body">곰과 호랑이가 <span class="kw">토테미즘 부족</span>을 상징한다는 점, 동일한 조건에서의 성패가 부족 연맹의 편입과 배제를 결정한다는 점이 변별력 있는 문제로 나옵니다.</div>
+        </div>
+      </div>
+      <div class="point-item">
+        <div class="point-num">03</div>
+        <div>
+          <div class="point-ttl">산신 좌정 결말의 상징적 의미 구별</div>
+          <div class="point-body"><span class="kw">천상 복귀(승천)와 산신 좌정의 차이</span>를 묻는 선택지가 빈번하게 등장합니다. 단군이 하늘로 돌아간 것이 아니라 우리 국토에 영원히 머무는 수호신이 되었다는 토속 신앙적 결말을 정확히 구분해야 합니다.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="big-quote">
+      <div class="big-quote-text">이 신화는 겉으로 드러난 주술적이고 비현실적인 사건 뒤에 숨겨진 당대 사회의 치열한 역사적 현실을 읽어내는 힘이 핵심이다. 각 모티프가 상징하는 집단의 열망과 제정일치 사회의 구조적 특성을 입체적으로 파악해야 한다.</div>
+      <div class="big-quote-src">이면 읽기 핵심 · G01</div>
+    </div>
+
+    <p class="body-p">
+      출제자는 <span class="hl-pink">신화의 표면적 사건을 역사적 현실로 치환하는 능력</span>을 시험합니다. 환웅이 하늘에서 내려온 것은 선진 이주 세력의 유입, 곰이 사람이 된 것은 토착 부족의 문명적 편입, 풍백·우사·운사는 농경 사회의 특성 — 이러한 치환이 자유자재로 이루어져야 합니다.
+    </p>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 28px;">
+      <div style="background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 22px 24px; box-shadow: 0 2px 8px var(--shadow);">
+        <div style="font-size: 10px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-soft); margin-bottom: 10px;">건드리지 않을 항목</div>
+        <p style="font-size: 13.5px; color: var(--ink-mid); line-height: 1.85;"><span class="strike">삼국유사 전체 구성 분석, 일연의 저술 의도에 대한 심층적 역사학적 논쟁</span><br>작품 자체의 서사 구조와 상징 해석에 출제 비중이 압도적으로 높기 때문입니다.</p>
+      </div>
+      <div style="background: #FCE8EF; border: 1px solid rgba(199,123,148,0.12); border-radius: 12px; padding: 22px 24px;">
+        <div style="font-size: 10px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--primary-deep); margin-bottom: 10px;">수업 실패 패턴</div>
+        <p style="font-size: 13.5px; color: var(--ink-mid); line-height: 1.85;"><span class="strike">곰이 진짜 사람이 되었다, 환웅이 쫓겨서 내려왔다</span>는 식으로 표면만 읽으면 학생은 이후 상징성 문제를 전혀 풀 수 없습니다.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ [Main] 장면 1 ═══ -->
+<div class="section section-white">
+  <div class="wrap">
+    <div class="section-tag">Main · 장면 1~2</div>
+    <h2 class="sec-title">천손 강림 — <em>하늘의 정당성이 땅에 꽂히다</em></h2>
+    <div class="divider"></div>
+
+    <p class="body-p">이 신화는 <span class="hl-yellow">일곱 개의 장면</span>으로 구성된 장대한 서사예요. 첫 번째와 두 번째 장면에서 하늘의 핏줄이 땅으로 내려오는 과정을 먼저 따라가 봐요.</p>
+
+    <div class="scene-card">
+      <div class="scene-card-header">
+        <div class="scene-card-header-num">1</div>
+        <div class="scene-card-header-info">
+          <div class="scene-card-header-label">장면 1~2</div>
+          <div class="scene-card-header-title">건국의 선포와 환웅의 자발적 강림</div>
+        </div>
+      </div>
+      <div class="scene-card-body">
+        <div class="scene-poem">
+          지금으로부터 이천 년 전, 단군왕검이라는 훌륭한 인물이 나타나 아사달에 도읍을 정했다. 그가 처음으로 나라를 세워 이름을 조선이라 불렀으니, 이는 중국의 태평성대인 요임금 시절과 같은 때이다.
+        </div>
+        <p class="body-p">
+          서사의 첫머리에서 단군왕검이라는 완성된 영웅의 등장을 먼저 제시하고, 중국의 태평성대와 나란히 배치함으로써 <span class="kw">민족 역사의 유구함과 독자적 정통성</span>을 확립합니다.
+        </p>
+
+        <div class="scene-poem">
+          환웅은 늘 인간 세상에 뜻을 품고 속세로 내려가 사람들을 구원하고자 했다. "저곳이라면 널리 인간 세상을 이롭게 할 만하구나."
+        </div>
+        <p class="body-p">
+          환웅은 누구에게 명령받거나 죄를 짓고 쫓겨난 것이 아니에요. <span class="hl-pink">스스로 인간 세상에 뜻을 품고 자발적으로 내려오겠다고 한 것</span>입니다. 이것이 일반적인 고전소설의 적강 모티프와 결정적으로 다른 지점이에요.
+        </p>
+
+        <div class="hl-box">
+          <strong>이면 읽기:</strong> 환웅의 자발적 강림은 단순히 착한 마음씨를 보여주기 위한 것이 아닙니다. <span class="kw">새로 등장한 지배자의 권력이 폭력적 정복이 아니라 하늘의 합법적 명령</span>임을 백성들에게 설득하는 치밀한 정치적 논리예요. 여기에 <span class="ul">홍익인간</span>이라는 이타적 선언까지 결합되면서, 권력은 도덕적 무결점의 갑옷을 입게 됩니다.
+        </div>
+
+        <p class="body-p">
+          환인이 하사한 <span class="kw">천부인 세 개</span>는 환웅의 지상 통치가 하늘로부터 부여받은 절대적 정당성을 지니고 있음을 증명하는 핵심 권력 기재입니다. 이것은 단순한 주술적 소재가 아니라 <span class="hl-pink">통치권의 합법적 위임</span>을 상징하는 장치예요.
+        </p>
+
+        <div class="tiktaka-wrap">
+          <div class="talk-bubble">
+            <div class="talk-avatar">보영</div>
+            <div class="talk-text-wrap">
+              <div class="talk-speaker">환웅 = 쫓겨난 신?  → 아니다</div>
+              <div class="talk-text">다른 고전소설에서 주인공이 하늘에서 죄를 짓고 땅으로 쫓겨나잖아요. 환웅도 서자니까 장자한테 밀려서 쫓겨난 거 아닌가요?</div>
+            </div>
+          </div>
+          <div class="talk-bubble">
+            <div class="talk-avatar">정국</div>
+            <div class="talk-text-wrap">
+              <div class="talk-speaker">"뜻을 품고" = 자발적 의지의 증거</div>
+              <div class="talk-text">아, 근데 원문에 "늘 인간 세상에 뜻을 품고"라고 했잖아. 쫓겨난 게 아니라 스스로 원했고, 아버지도 흡족하게 허락한 거야. 이건 적강이랑 완전 반대야.</div>
+            </div>
+          </div>
+          <div class="talk-bubble">
+            <div class="talk-avatar teacher-av">쿠키</div>
+            <div class="talk-text-wrap">
+              <div class="talk-speaker teacher-sp">✓ 자발적 강림 vs 비자발적 적강 — 이것이 핵심 변별점</div>
+              <div class="talk-text">정국 학생이 정확히 짚었어요. <strong>환웅은 쫓겨난 것이 아니라 구원의 뜻을 품고 스스로 내려온 영웅</strong>이에요. 적강 화소에 익숙한 수험생이 자발적 강림과 비자발적 추방을 혼동하는 것이 출제자가 노리는 첫 번째 함정이에요.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="board">
+          <div class="board-label">판서 · 장면 1~2</div>
+          <div class="board-content">
+            <div class="board-row">
+              <div class="board-row-key">표면</div>
+              <div class="board-row-val">하늘의 신이 <span class="hl-yellow">지상으로 강림</span></div>
+            </div>
+            <div class="board-row">
+              <div class="board-row-key">이면</div>
+              <div class="board-row-val correct"><span class="hl-green">선진 이주 세력</span>의 유입 + <span class="ul">통치 권위의 정당화</span></div>
+            </div>
+            <div class="board-row">
+              <div class="board-row-key">오답 함정</div>
+              <div class="board-row-val trap"><span class="hl-pink">환웅의 비자발적 추방</span> / <span class="hl-pink">적강 모티프와 동일시</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ [Main] 장면 2 ═══ -->
+<div class="section section-chalk">
+  <div class="wrap">
+    <div class="section-tag">Main · 장면 3</div>
+    <h2 class="sec-title">신시 개창 — <em>농경 사회의 질서가 뿌리내리다</em></h2>
+    <div class="divider"></div>
+
+    <div class="scene-card">
+      <div class="scene-card-header">
+        <div class="scene-card-header-num">2</div>
+        <div class="scene-card-header-info">
+          <div class="scene-card-header-label">장면 3</div>
+          <div class="scene-card-header-title">환웅 천왕의 문명 건설과 제정일치</div>
+        </div>
+      </div>
+      <div class="scene-card-body">
+        <div class="scene-poem">
+          마침내 환웅은 무리 삼천 명을 이끌고 태백산 꼭대기에 있는 신성한 나무, 곧 신단수 아래로 내려왔다. 환웅은 바람을 다스리는 풍백, 비를 내리는 우사, 구름을 부리는 운사를 거느렸다.
+        </div>
+        <p class="body-p">
+          환웅이 데리고 온 <span class="kw">풍백·우사·운사</span>는 단순한 호위병이 아니에요. 바람, 비, 구름을 관장하는 이들의 존재는 <span class="hl-pink">당대 사회가 기상 조건에 절대적으로 의존하는 농경 사회</span>였음을 증명하는 가장 핵심적인 출제 근거입니다.
+        </p>
+
+        <div class="hl-box">
+          <strong>이면 읽기:</strong> 자연을 다스리는 힘과 곡식·생명·질병·형벌·선악이라는 사회 제도를 동시에 주관하는 모습은, 환웅이 <span class="kw">제사장이자 정치적 지배자</span>인 제정일치 사회의 통치자임을 보여줍니다. 신단수라는 우주축을 매개로 하늘과 땅이 연결되고, 신시라는 성스러운 도시가 열린다는 설정은 단순한 방문이 아니라 <span class="hl-green">새로운 문명의 창조</span>를 선언하는 것이에요.
+        </div>
+
+        <div class="tiktaka-wrap">
+          <div class="talk-bubble">
+            <div class="talk-avatar">지수</div>
+            <div class="talk-text-wrap">
+              <div class="talk-speaker">풍백·우사·운사 = 단순 호위대?</div>
+              <div class="talk-text">환웅이 삼천 명을 데리고 왔으니까 풍백, 우사, 운사도 그냥 군대의 장수 같은 호위대인 거 아닌가요?</div>
+            </div>
+          </div>
+          <div class="talk-bubble">
+            <div class="talk-avatar">용득</div>
+            <div class="talk-text-wrap">
+              <div class="talk-speaker">바람·비·구름 = 농사의 생명줄</div>
+              <div class="talk-text">아니, 잘 보면 바람, 비, 구름이잖아. 이건 전부 농사에 필요한 거야. 날씨를 지배한다는 건 곧 먹을 것을 지배한다는 뜻이니까, 이 사회가 농경 사회라는 증거인 거지.</div>
+            </div>
+          </div>
+          <div class="talk-bubble">
+            <div class="talk-avatar teacher-av">쿠키</div>
+            <div class="talk-text-wrap">
+              <div class="talk-speaker teacher-sp">✓ 풍백·우사·운사는 농경 사회의 결정적 증거</div>
+              <div class="talk-text">용득 학생의 분석이 완벽해요. <strong>기상 현상을 관장하는 신들을 대동했다는 것은 당대 사회의 경제적 기반이 농경이었음을 증명하는 핵심 근거</strong>예요. 이 부분은 서술형에서도 단골로 나오니까 반드시 기억하세요.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="board">
+          <div class="board-label">판서 · 장면 3</div>
+          <div class="board-content">
+            <div class="board-row">
+              <div class="board-row-key">핵심 소재</div>
+              <div class="board-row-val"><span class="hl-yellow">풍백·우사·운사</span> = <span class="correct">농경 사회</span>의 핵심 증거</div>
+            </div>
+            <div class="board-row">
+              <div class="board-row-key">통치 구조</div>
+              <div class="board-row-val"><span class="ul">제정일치</span> — 제사장 + 정치적 지배자 겸직</div>
+            </div>
+            <div class="board-row">
+              <div class="board-row-key">공간 상징</div>
+              <div class="board-row-val correct"><span class="hl-green">신단수</span> = 하늘과 땅을 잇는 우주축</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ [Main] 장면 3 ═══ -->
+<div class="section section-white">
+  <div class="wrap">
+    <div class="section-tag">Main · 장면 4~6</div>
+    <h2 class="sec-title">통과 의례와 천지 교혼 — <em>뼈를 깎는 시련 끝에 핏줄이 태어나다</em></h2>
+    <div class="divider"></div>
+
+    <div class="scene-card">
+      <div class="scene-card-header">
+        <div class="scene-card-header-num">3</div>
+        <div class="scene-card-header-info">
+          <div class="scene-card-header-label">장면 4~6</div>
+          <div class="scene-card-header-title">금기의 성패, 웅녀의 탄생, 단군왕검의 잉태</div>
+        </div>
+      </div>
+      <div class="scene-card-body">
+        <div class="scene-poem">
+          "너희가 이것을 먹고 백 일 동안 햇빛을 보지 않으며 버틴다면, 마침내 사람의 모습을 얻게 될 것이다." 곰은 무사히 여인의 몸으로 변했지만, 호랑이는 끝내 금기를 지키지 못해 사람이 되지 못했다.
+        </div>
+        <p class="body-p">
+          곰과 호랑이는 동물원에 있는 짐승이 아니에요. <span class="kw">곰을 섬기는 토착 부족과 호랑이를 섬기는 토착 부족</span>을 상징하는 비유적 장치입니다. 이들이 사람이 되고자 한 것은 선진 문명을 지닌 환웅 세력에 <span class="hl-pink">동화되고 편입되기를 간절히 바라는 토착 세력의 열망</span>을 형상화한 것이에요.
+        </p>
+
+        <div class="hl-box">
+          <strong>이면 읽기:</strong> 환웅은 곰과 호랑이에게 <span class="kw">똑같은 양의 쑥과 마늘, 똑같은 금기</span>를 부여했습니다. 결과의 차이는 환웅이 차별적 조건을 준 것이 아니라 호랑이가 스스로 조급함을 이기지 못한 내적 원인에서 기인해요. 이는 특정 부족의 자격 미달을 상징하는 장치입니다. 현대적인 공정성의 잣대를 기계적으로 적용하면 출제자의 함정에 걸립니다.
+        </div>
+
+        <div class="scene-poem">
+          그 간절한 소망을 들은 환웅은 잠시 인간 남자의 모습으로 변하여 웅녀와 부부의 연을 맺었다. 이윽고 웅녀가 잉태하여 아들을 낳으니, 그가 바로 우리 민족의 시조인 단군왕검이다.
+        </div>
+        <p class="body-p">
+          환웅(하늘, 이주 세력)과 웅녀(땅, 토착 세력)의 결합을 <span class="ul">천지 교혼</span>이라 합니다. 이는 무력 충돌 없이 두 세력이 <span class="hl-green">상호 결합하여 부족 연맹 국가를 탄생시켰음</span>을 상징해요. 단군왕검은 신성과 인성을 동시에 지닌 반인반신의 영웅으로 출현하는 것입니다.
+        </p>
+
+        <div class="tiktaka-wrap">
+          <div class="talk-bubble">
+            <div class="talk-avatar">보영</div>
+            <div class="talk-text-wrap">
+              <div class="talk-speaker">호랑이 탈락 = 환웅의 차별?</div>
+              <div class="talk-text">호랑이가 사람이 못 된 건 환웅이 처음부터 곰한테만 유리한 조건을 줬기 때문 아닌가요? 불공평해 보여요.</div>
+            </div>
+          </div>
+          <div class="talk-bubble">
+            <div class="talk-avatar">용득</div>
+            <div class="talk-text-wrap">
+              <div class="talk-speaker">동일 조건 → 내적 원인의 차이</div>
+              <div class="talk-text">아니야, 원문에 쑥 한 타래와 마늘 스무 쪽을 똑같이 줬다고 했잖아. 조건이 같은데 호랑이가 못 참은 거야. 환웅 탓이 아니라 호랑이 자신의 문제야.</div>
+            </div>
+          </div>
+          <div class="talk-bubble">
+            <div class="talk-avatar teacher-av">쿠키</div>
+            <div class="talk-text-wrap">
+              <div class="talk-speaker teacher-sp">✓ 동일 조건 + 내적 차이 = 통과 의례의 본질</div>
+              <div class="talk-text">보영 학생의 반응이 바로 출제자가 노리는 함정이에요. <strong>승자와 패자가 나뉘는 결과를 보고 현대적인 공정성 잣대를 기계적으로 적용하면 서사의 원인을 오독</strong>합니다. 원문을 근거로 동일한 조건이 부여되었음을 확인하는 습관이 핵심이에요.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="board">
+          <div class="board-label">판서 · 장면 4~6</div>
+          <div class="board-content">
+            <div class="board-row">
+              <div class="board-row-key">곰·호랑이</div>
+              <div class="board-row-val"><span class="hl-yellow">토템 부족</span>의 상징 (실제 동물 아님)</div>
+            </div>
+            <div class="board-row">
+              <div class="board-row-key">동굴·금기</div>
+              <div class="board-row-val correct"><span class="hl-green">통과 의례</span> — 죽음과 부활의 상징적 과정</div>
+            </div>
+            <div class="board-row">
+              <div class="board-row-key">천지 교혼</div>
+              <div class="board-row-val correct">환웅(하늘) + 웅녀(땅) = <span class="hl-green">이주 세력과 토착 세력의 결합</span></div>
+            </div>
+            <div class="board-row">
+              <div class="board-row-key">오답 함정</div>
+              <div class="board-row-val trap"><span class="hl-pink">환웅의 차별적 조건 부여</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ [Turning Point] ═══ -->
+<div class="section section-chalk">
+  <div class="wrap">
+    <div class="section-tag">Turning Point</div>
+    <h2 class="sec-title">신화 읽기의 <em>결정적 전환</em></h2>
+    <div class="divider"></div>
+
+    <div class="big-quote">
+      <div class="big-quote-text">곰이 진짜 사람이 되었다고 믿으시나요? 하늘에서 신이 진짜 내려왔다고요?</div>
+      <div class="big-quote-src">Turning Point 발화</div>
+    </div>
+
+    <p class="body-p">
+      물론 아니죠. 그런데 우리가 방금까지 추적한 것은 뭐였나요? 환웅의 강림은 <span class="kw">선진 이주 세력의 유입</span>, 곰의 변신은 <span class="kw">토착 부족의 문명적 편입</span>, 풍백·우사·운사는 <span class="kw">농경 사회의 특성</span>, 천부인은 <span class="kw">통치권의 합법적 위임</span>이었습니다.
+    </p>
+
+    <p class="body-p">
+      <span class="hl-pink">신화의 비현실적인 사건 하나하나가 전부 당대의 치열한 역사적 현실을 상징하는 코드</span>라는 걸 이제 알겠죠? 출제자는 여러분이 이 코드를 정확히 해독할 수 있는지, 아니면 표면적인 마술 이야기에 머물러 있는지를 시험해요.
+    </p>
+
+    <p class="body-p">
+      이 문학적 통찰을 시험 언어로 바꾸면 <span class="hl-green">건국 신화의 신이한 모티프가 상징하는 역사적·사회적 현실의 정확한 치환 능력</span>이 됩니다.
+    </p>
+
+    <div class="tiktaka-wrap">
+      <div class="talk-bubble">
+        <div class="talk-avatar">정국</div>
+        <div class="talk-text-wrap">
+          <div class="talk-speaker">표면 = 마술, 이면 = 역사</div>
+          <div class="talk-text">결국 신화는 역사책인데 비유로 쓴 거네요. 곰이 사람이 된 게 아니라 곰 부족이 환웅 세력에 편입된 거고, 호랑이 부족은 탈락한 거고.</div>
+        </div>
+      </div>
+      <div class="talk-bubble">
+        <div class="talk-avatar">지수</div>
+        <div class="talk-text-wrap">
+          <div class="talk-speaker">코드 해독 = 출제의 본질</div>
+          <div class="talk-text">그러면 시험에서 이 작품이 나올 때마다 각 소재가 뭘 상징하는지 치환하는 연습을 해야 하는 거네요. 단순히 줄거리 외우는 게 아니라.</div>
+        </div>
+      </div>
+      <div class="talk-bubble">
+        <div class="talk-avatar teacher-av">쿠키</div>
+        <div class="talk-text-wrap">
+          <div class="talk-speaker teacher-sp">✓ 신화 = 역사의 상징적 코드</div>
+          <div class="talk-text">맞아요. <strong>건국 신화를 읽을 때 가장 중요한 능력은 비현실적 사건을 역사적 현실로 치환하는 힘</strong>이에요. 이 능력이 없으면 선택지의 상징성 해석 문제를 절대 풀 수 없어요.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="board">
+      <div class="board-label">판서 · Turning Point</div>
+      <div class="board-content">
+        <div class="board-row">
+          <div class="board-row-key">오개념</div>
+          <div class="board-row-val trap"><span class="hl-pink">신화 = 비현실적 마술 이야기</span></div>
+        </div>
+        <div class="board-row">
+          <div class="board-row-key">정개념</div>
+          <div class="board-row-val correct"><span class="hl-green">신화 = 역사적 현실의 상징적 코드</span></div>
+        </div>
+        <div class="board-row">
+          <div class="board-row-key">핵심 능력</div>
+          <div class="board-row-val">비현실적 모티프 → <span class="correct">역사적 현실로의 치환</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ [Insight Check] ═══ -->
+<div class="section section-white">
+  <div class="wrap">
+    <div class="section-tag">Insight Check</div>
+    <h2 class="sec-title">선택지 판별 — <em>시험 언어로 무기화</em></h2>
+    <div class="divider"></div>
+
+    <div class="misconception-wrap">
+      <div class="misconception-card">
+        <div class="mc-head wrong">
+          <div class="mc-head-label">오답 (가)</div>
+          <div class="mc-head-title">환웅의 강림은 환인의 강제적 명령에 의한 추방으로, 아버지의 권위에 복종하는 자세를 보여준다.</div>
+        </div>
+        <div class="mc-body">
+          <div class="mc-body-text">
+            <strong>왜 틀렸는가?</strong><br>
+            고전소설의 적강 화소에 익숙한 학생이 자발적 강림과 비자발적 추방을 혼동하기 때문이에요. 원문에 <strong>"늘 인간 세상에 뜻을 품고"</strong>라고 명시되어 있으며, 환인은 "흡족하게 고개를 끄덕"이며 허락한 것입니다.
+          </div>
+        </div>
+      </div>
+      <div class="misconception-card">
+        <div class="mc-head right">
+          <div class="mc-head-label">정답 (나)</div>
+          <div class="mc-head-title">환웅은 인간 세상을 이롭게 하려는 자발적 의지를 품고 천신의 승인을 받아 강림한 주체적 영웅이다.</div>
+        </div>
+        <div class="mc-body">
+          <div class="mc-body-text">
+            <strong class="ok">왜 맞는가?</strong><br>
+            환웅 스스로 뜻을 품었고, 환인이 허락하며 천부인까지 하사한 점에서 자발적 의지와 합법적 승인이 완벽하게 결합된 주체적 강림입니다.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hl-box">
+      <strong>올바른 선택을 찾는 원리:</strong> 건국 신화에서 영웅의 강림 동기를 판별할 때는 <span class="kw">원문의 서술어</span>를 철저히 확인한다. "뜻을 품고", "구원하고자 했다"는 자발성의 증거이며, "흡족하게 허락했다"는 합법적 승인의 증거이다.
+    </div>
+
+    <div class="board">
+      <div class="board-label">판서 · Insight Check</div>
+      <div class="board-content">
+        <div class="board-row">
+          <div class="board-row-key">원리</div>
+          <div class="board-row-val correct">강림 동기는 <span class="hl-green">원문의 서술어</span>로 판별한다.</div>
+        </div>
+        <div class="board-row">
+          <div class="board-row-key">함정</div>
+          <div class="board-row-val trap"><span class="hl-pink">적강 모티프와의 혼동</span></div>
+        </div>
+        <div class="board-row">
+          <div class="board-row-key">판단 질문</div>
+          <div class="board-row-val">환웅은 <span class="hl-yellow">누구의 의지</span>로 내려왔는가? 자신인가, 환인인가?</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ [Exam Bridge] ═══ -->
+<div class="section section-chalk">
+  <div class="wrap">
+    <div class="section-tag">Exam Bridge</div>
+    <h2 class="sec-title">오답 함정 해부 — <em>악랄한 선택지 판별</em></h2>
+    <div class="divider"></div>
+
+    <div class="misconception-wrap">
+      <div class="misconception-card">
+        <div class="mc-head wrong">
+          <div class="mc-head-label">오답 함정 유형 1</div>
+          <div class="mc-head-title">호랑이가 사람이 되지 못한 것은 환웅이 차별적 조건을 부여했기 때문이다.</div>
+        </div>
+        <div class="mc-body">
+          <div class="mc-body-text">
+            <strong>함정 유형:</strong> 현대적 관점의 기계적 적용<br><br>
+            <strong>왜 매력적인가:</strong> 승자와 패자가 나뉘는 결과를 보면 자연스럽게 불공정함을 의심하게 되기 때문이에요.<br><br>
+            원문에서 환웅은 <strong>동일한 쑥과 마늘, 동일한 금기</strong>를 부여했습니다. 호랑이의 탈락은 내적 조급함에서 기인합니다.
+          </div>
+        </div>
+      </div>
+      <div class="misconception-card">
+        <div class="mc-head wrong">
+          <div class="mc-head-label">오답 함정 유형 2</div>
+          <div class="mc-head-title">단군왕검은 통치를 마치고 하늘로 승천하여 천상의 영생을 누린다.</div>
+        </div>
+        <div class="mc-body">
+          <div class="mc-body-text">
+            <strong>함정 유형:</strong> 결말 구조의 기계적 대입<br><br>
+            <strong>왜 매력적인가:</strong> 하늘에서 시작했으니 하늘로 돌아가리라는 단순한 원형 구조를 대입하기 때문이에요.<br><br>
+            단군왕검은 <strong>하늘로 돌아간 것이 아니라 아사달의 산신으로 좌정</strong>했습니다. 이는 토속적인 산신 신앙과 결합한 결말입니다.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tiktaka-wrap" style="margin-top: 24px;">
+      <div class="talk-bubble">
+        <div class="talk-avatar">보영</div>
+        <div class="talk-text-wrap">
+          <div class="talk-speaker">하늘에서 왔으니 하늘로 돌아간다?  → 아니다</div>
+          <div class="talk-text">하늘에서 내려왔으니까 당연히 임무 끝나면 다시 하늘로 올라가야 되는 거 아닌가요? 원래 있던 곳으로 복귀하는 거잖아요.</div>
+        </div>
+      </div>
+      <div class="talk-bubble">
+        <div class="talk-avatar">정국</div>
+        <div class="talk-text-wrap">
+          <div class="talk-speaker">"산신이 되었다" = 하늘이 아니라 땅에 남았다</div>
+          <div class="talk-text">아, 근데 원문에 "다시 아사달로 돌아와 산을 지키는 신령이 되었다"고 했잖아. 하늘로 간 게 아니라 우리 땅의 산에 남은 거야. 완전히 다른 결말이야.</div>
+        </div>
+      </div>
+      <div class="talk-bubble">
+        <div class="talk-avatar teacher-av">쿠키</div>
+        <div class="talk-text-wrap">
+          <div class="talk-speaker teacher-sp">✓ 산신 좌정 = 천상 복귀가 아닌 영원한 수호</div>
+          <div class="talk-text"><strong>단군왕검은 하늘로 떠나버린 것이 아니라 우리 국토에 영원히 머무르는 민족의 수호신이 된 것</strong>이에요. 이것은 불교나 유교가 아니라 우리 민족 고유의 토속 신앙인 산신 신앙과 결합한 독특한 결말 처리 방식이에요. 천상 복귀와 산신 좌정을 반드시 구별하세요.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="board">
+      <div class="board-label">판서 · Exam Bridge</div>
+      <div class="board-content">
+        <div class="board-row">
+          <div class="board-row-key">함정 유형 1</div>
+          <div class="board-row-val trap">현대적 공정성 잣대의 기계적 적용 (판별 근거: <span class="ul">동일한 조건 부여</span>)</div>
+        </div>
+        <div class="board-row">
+          <div class="board-row-key">함정 유형 2</div>
+          <div class="board-row-val trap">원형 구조 대입에 의한 결말 오독 (판별 근거: <span class="ul">산신 좌정</span>)</div>
+        </div>
+        <div class="board-row">
+          <div class="board-row-key">세트 간 연결</div>
+          <div class="board-row-val correct">건국 신화 간 <span class="hl-green">강림 동기</span>와 <span class="hl-green">결말 처리 방식</span>의 비교</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ [G03] 오개념 분석 ═══ -->
+<div class="section" id="g03">
+  <div class="section-inner">
+    <div class="section-tag">G03</div>
+    <h2 class="section-title">오개념 분석</h2>
+    <p class="section-desc">수험생이 가장 자주 혼동하는 세 가지 함정을 근거 텍스트와 함께 해체합니다.</p>
+
+    <!-- MA Card 1 -->
+    <div class="misconception-card">
+      <div class="ma-head">
+        <div class="ma-head-tag">오개념 01</div>
+        <div class="ma-head-title">환웅의 강림은 환인의 강제적 명령에 의한 추방이다</div>
+      </div>
+      <div class="ma-body">
+        <p class="ma-origin"><strong>혼동 원인</strong><br>고전소설에서 흔히 등장하는 적강(謫降) 화소 — 즉, 천상에서 죄를 짓고 강제로 추방당하는 패턴 — 에 익숙해진 수험생이, 단군신화의 강림 역시 같은 구조라고 기계적으로 대입하는 것이다.</p>
+        <div class="ma-row">
+          <div class="ma-row-head wrong">오개념</div>
+          <div class="ma-row-body">환웅은 하늘에서 잘못을 저질러 환인에 의해 지상으로 쫓겨난 것이다.</div>
+        </div>
+        <div class="ma-row">
+          <div class="ma-row-head right">바른 개념</div>
+          <div class="ma-row-body">환웅은 <u class="hl-green">"늘 인간 세상에 뜻을 품고 속세로 내려가 사람들을 구원하고자 했다"</u>고 명시되어 있다. 환인은 이를 <u class="hl-green">"흡족하게 고개를 끄덕"</u>이며 허락했다. 이는 비자발적 추방이 아니라, 아들의 주체적 의지를 아버지가 승인한 <strong>자발적 강림</strong>이다.</div>
+        </div>
+        <p class="ma-tip">실전 판별: 지문에서 환웅의 강림 동기를 묻는 선지가 나오면, '추방/처벌/명령'이 포함된 선지는 즉시 배제하고 '자발적 구원 의지'를 핵심 근거로 삼아야 한다.</p>
+      </div>
+    </div>
+
+    <!-- MA Card 2 -->
+    <div class="misconception-card">
+      <div class="ma-head">
+        <div class="ma-head-tag">오개념 02</div>
+        <div class="ma-head-title">호랑이가 사람이 되지 못한 것은 차별적 조건 때문이다</div>
+      </div>
+      <div class="ma-body">
+        <p class="ma-origin"><strong>혼동 원인</strong><br>승자와 패자가 나뉘는 결과만 보고, 현대적 공정성의 잣대를 기계적으로 적용하여 환웅이 호랑이에게 더 가혹한 조건을 부여했으리라고 오독하는 것이다.</p>
+        <div class="ma-row">
+          <div class="ma-row-head wrong">오개념</div>
+          <div class="ma-row-body">환웅이 호랑이에게 불리한 조건을 부여하여 의도적으로 탈락시켰다.</div>
+        </div>
+        <div class="ma-row">
+          <div class="ma-row-head right">바른 개념</div>
+          <div class="ma-row-body">환웅은 곰과 호랑이 모두에게 <u class="hl-green">똑같은 양의 쑥과 마늘, 동일한 금기</u>를 지시했다. 결과의 차이는 호랑이가 <u class="hl-green">"끝내 금기를 지키지 못한"</u> 내적 조급함에서 비롯된 것이며, 이는 특정 토착 부족의 <strong>자격 미달</strong>을 상징하는 장치이다.</div>
+        </div>
+        <p class="ma-tip">실전 판별: '차별적 조건 부여'라는 선지가 등장하면, 4장면에서 동일 조건이 명시된 근거를 떠올려 즉시 오답으로 처리해야 한다.</p>
+      </div>
+    </div>
+
+    <!-- MA Card 3 -->
+    <div class="misconception-card">
+      <div class="ma-head">
+        <div class="ma-head-tag">오개념 03</div>
+        <div class="ma-head-title">단군왕검은 하늘로 승천하여 영생을 누린다</div>
+      </div>
+      <div class="ma-body">
+        <p class="ma-origin"><strong>혼동 원인</strong><br>천손 강림이라는 도입부에 집착하여, 결말 역시 다시 천상으로 올라가리라는 단순한 원형 구조를 기계적으로 대입하는 것이다.</p>
+        <div class="ma-row">
+          <div class="ma-row-head wrong">오개념</div>
+          <div class="ma-row-body">단군왕검은 통치를 마친 뒤 환웅처럼 다시 하늘로 돌아가 영생한다.</div>
+        </div>
+        <div class="ma-row">
+          <div class="ma-row-head right">바른 개념</div>
+          <div class="ma-row-body">7장면에서 단군왕검은 하늘로 돌아간 것이 아니라 <u class="hl-green">"아사달로 돌아와 산을 지키는 신령이 되었"</u>다. 이는 천상 복귀가 아니라 토착적인 <strong>산신 신앙</strong>과 결합하여 우리 국토에 영원히 머무는 민족의 수호자로 좌정한 것이다.</div>
+        </div>
+        <p class="ma-tip">실전 판별: '천상 복귀/승천'이라는 선지를 보면 즉시 배제하고, '산신 좌정 = 토속 신앙에 의한 지상 영속'이라는 공식을 적용하라.</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══ [G04] 출제 연결 지도 ═══ -->
+<div class="section" id="g04">
+  <div class="section-inner">
+    <div class="section-tag">G04</div>
+    <h2 class="section-title">출제 연결 지도</h2>
+    <p class="section-desc">기본형부터 서술형까지, 실전 출제 패턴을 한눈에 조망합니다.</p>
+
+    <table class="exam-table">
+      <thead>
+        <tr>
+          <th class="exam-table-header" style="width:15%">유형</th>
+          <th class="exam-table-header" style="width:35%">질문 핵심</th>
+          <th class="exam-table-header" style="width:50%">정답 방향</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td colspan="3" style="background:var(--accent-bg);font-weight:700;padding:8px 12px;color:var(--ink);">기본형</td></tr>
+        <tr>
+          <td><span class="exam-pct">40%</span></td>
+          <td>풍백·우사·운사를 통해 짐작할 수 있는 고조선의 경제적 기반은?</td>
+          <td>날씨 변화에 결정적 영향을 받는 <u class="u-naver">농경 사회</u>였음을 증명</td>
+        </tr>
+        <tr>
+          <td><span class="exam-pct">35%</span></td>
+          <td>환웅이 곰과 호랑이에게 설정한 공간적·행위적 금기는?</td>
+          <td>백 일간 동굴 고립 + 햇빛 차단 + 쑥·마늘만 섭취하는 <u class="u-naver">통과 의례</u></td>
+        </tr>
+        <tr>
+          <td><span class="exam-pct">25%</span></td>
+          <td>단군왕검이 택한 존재의 최종적 형태는?</td>
+          <td>아사달에 머무르는 <u class="u-naver">산신 좌정</u> — 토속 신앙과 결합한 영속적 수호</td>
+        </tr>
+        <tr><td colspan="3" style="background:var(--accent-bg);font-weight:700;padding:8px 12px;color:var(--ink);">심화형</td></tr>
+        <tr>
+          <td><span class="exam-pct">심화</span></td>
+          <td>건국 시기를 요임금과 동일하게 설정한 서사적 의도는?</td>
+          <td>민족 역사의 유구함과 독자적 정통성을 드높여 자긍심 강화</td>
+        </tr>
+        <tr>
+          <td><span class="exam-pct">심화</span></td>
+          <td>천지 교혼이 내포한 역사적·사회적 의미는?</td>
+          <td>선진 이주 세력과 토착 세력의 무력 충돌 없는 <u class="u-naver">부족 연맹</u> 형성</td>
+        </tr>
+        <tr>
+          <td><span class="exam-pct">심화</span></td>
+          <td>환웅의 강림 동기가 일반적 적강 모티프와 구별되는 차이는?</td>
+          <td>비자발적 추방이 아닌 <u class="u-naver">자발적 구원 의지</u> — 홍익인간 이념의 본질</td>
+        </tr>
+        <tr><td colspan="3" style="background:var(--accent-bg);font-weight:700;padding:8px 12px;color:var(--ink);">서술형</td></tr>
+        <tr>
+          <td><span class="exam-pct">서술</span></td>
+          <td>천부인과 풍백·우사·운사의 상징적 의미를 농경 사회와 결부하여 서술</td>
+          <td>천부인 = 합법적 권위 + 풍백 등 = 농경 의존 → 제정일치 사회 입증</td>
+        </tr>
+        <tr>
+          <td><span class="exam-pct">서술</span></td>
+          <td>곰과 호랑이의 과정을 통과 의례 관점에서 분석</td>
+          <td>동일 조건 → 인내 성패 → 토착 부족의 편입/배제 상징</td>
+        </tr>
+        <tr>
+          <td><span class="exam-pct">서술</span></td>
+          <td>1장면과 7장면에서 민족 정통성을 확보하는 방식</td>
+          <td>요임금 병치(시작) + 산신 좌정(결말) = 수미상관적 영속성</td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+</div>
+
+<!-- ═══ [G06] 수준별 전략 ═══ -->
+<div class="section" id="g06">
+  <div class="section-inner">
+    <div class="section-tag">G06</div>
+    <h2 class="section-title">수준별 전략</h2>
+    <p class="section-desc">현재 실력에 맞는 전략을 선택하여 단계적으로 정복하세요.</p>
+
+    <div class="level-grid">
+      <!-- PIONEER -->
+      <div class="level-card">
+        <div class="level-head high">PIONEER</div>
+        <div class="level-body">
+          <div class="level-row">
+            <div class="level-row-lbl">목표</div>
+            <div class="level-row-val">서술형 완벽 대비 + 연계 작품 비교</div>
+          </div>
+          <div class="level-row">
+            <div class="level-row-lbl">전략</div>
+            <div class="level-row-val">천부인·풍백 등의 상징을 농경 사회·제정일치와 결합하여 논술 수준의 답안 작성 연습. 주몽 신화와 천손 강림 모티프를 비교하고, 조신 설화와의 대조를 통해 건국 신화의 거시적 특수성을 입체적으로 정리.</div>
+          </div>
+          <div class="level-row">
+            <div class="level-row-lbl">체크</div>
+            <div class="level-row-val">서술형 3문제를 시간 제한 내에 근거 텍스트를 인용하며 완성할 수 있는가?</div>
+          </div>
+        </div>
+      </div>
+      <!-- EXPLORER -->
+      <div class="level-card">
+        <div class="level-head mid">EXPLORER</div>
+        <div class="level-body">
+          <div class="level-row">
+            <div class="level-row-lbl">목표</div>
+            <div class="level-row-val">심화형 문제 정복 + 오개념 완전 탈피</div>
+          </div>
+          <div class="level-row">
+            <div class="level-row-lbl">전략</div>
+            <div class="level-row-val">G03의 세 가지 오개념을 빈칸 없이 암기하고, 각 오개념의 근거 구절을 원문에서 정확히 찾아 밑줄 치는 훈련. 천지 교혼과 통과 의례의 상징 구조를 장면 번호와 연결하여 도식화.</div>
+          </div>
+          <div class="level-row">
+            <div class="level-row-lbl">체크</div>
+            <div class="level-row-val">세 가지 오개념의 원인·오답·바른 개념을 입으로 설명할 수 있는가?</div>
+          </div>
+        </div>
+      </div>
+      <!-- SEEKER -->
+      <div class="level-card">
+        <div class="level-head low">SEEKER</div>
+        <div class="level-body">
+          <div class="level-row">
+            <div class="level-row-lbl">목표</div>
+            <div class="level-row-val">기본형 문제 안정적 득점</div>
+          </div>
+          <div class="level-row">
+            <div class="level-row-lbl">전략</div>
+            <div class="level-row-val">7개 장면의 핵심어를 순서대로 암기하고, 풍백·우사·운사 = 농경 사회, 곰·호랑이 = 토템 부족, 산신 좌정 = 토속 신앙이라는 세 가지 등식을 반복 학습. 기본형 3문제를 빈칸 채우기로 반복.</div>
+          </div>
+          <div class="level-row">
+            <div class="level-row-lbl">체크</div>
+            <div class="level-row-val">기본형 3문제의 정답 키워드를 3초 안에 떠올릴 수 있는가?</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══ [G07] 핵심 포인트 ═══ -->
+<div class="section" id="g07">
+  <div class="section-inner">
+    <div class="section-tag">G07</div>
+    <h2 class="section-title">핵심 포인트</h2>
+    <p class="section-desc">시험장에서 반드시 떠올려야 할 세 가지 결정적 포인트입니다.</p>
+
+    <div class="tip-grid">
+      <div class="tip-card">
+        <div class="tip-card-head">
+          <div class="tip-card-head-num">01</div>
+          <div class="tip-card-head-title">홍익인간</div>
+        </div>
+        <div class="tip-card-body">
+          <div class="tip-card-row">
+            <div class="tip-card-row-lbl">정의</div>
+            <div class="tip-card-row-val">널리 인간 세상을 이롭게 한다는 고조선의 건국 이념</div>
+          </div>
+          <div class="tip-card-row">
+            <div class="tip-card-row-lbl">핵심</div>
+            <div class="tip-card-row-val">권력의 목적이 폭력적 정복이 아니라 만백성의 평화와 복지에 있음을 규정</div>
+          </div>
+          <div class="tip-card-row">
+            <div class="tip-card-row-lbl">출제</div>
+            <div class="tip-card-row-val">환웅의 자발적 강림 동기와 직결 — 적강 모티프와의 차이 변별</div>
+          </div>
+        </div>
+      </div>
+      <div class="tip-card">
+        <div class="tip-card-head">
+          <div class="tip-card-head-num">02</div>
+          <div class="tip-card-head-title">천지 교혼</div>
+        </div>
+        <div class="tip-card-body">
+          <div class="tip-card-row">
+            <div class="tip-card-row-lbl">정의</div>
+            <div class="tip-card-row-val">천상의 환웅과 지상의 웅녀가 결합하는 신화적 혼인 모티프</div>
+          </div>
+          <div class="tip-card-row">
+            <div class="tip-card-row-lbl">핵심</div>
+            <div class="tip-card-row-val">이주 세력의 선진 문명 + 토착 세력의 기반 = 충돌 없는 부족 연맹 국가 창출</div>
+          </div>
+          <div class="tip-card-row">
+            <div class="tip-card-row-lbl">출제</div>
+            <div class="tip-card-row-val">단군왕검의 반인반신적 혈통 근거 — 역사적 해석 문제의 핵심 키</div>
+          </div>
+        </div>
+      </div>
+      <div class="tip-card">
+        <div class="tip-card-head">
+          <div class="tip-card-head-num">03</div>
+          <div class="tip-card-head-title">통과 의례</div>
+        </div>
+        <div class="tip-card-body">
+          <div class="tip-card-row">
+            <div class="tip-card-row-lbl">정의</div>
+            <div class="tip-card-row-val">동굴 속 금기를 지키며 새로운 존재로 거듭나는 제의적 시련 과정</div>
+          </div>
+          <div class="tip-card-row">
+            <div class="tip-card-row-lbl">핵심</div>
+            <div class="tip-card-row-val">동일 조건 아래 인내의 성패가 연맹 편입/배제를 결정하는 상징 구조</div>
+          </div>
+          <div class="tip-card-row">
+            <div class="tip-card-row-lbl">출제</div>
+            <div class="tip-card-row-val">곰·호랑이 = 토템 부족이라는 비유적 장치 판별이 핵심 변별 포인트</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══ [KP] 키포인트 섹션 ═══ -->
+<div class="section" id="kp">
+  <div class="section-inner">
+    <div class="section-tag">Key Points</div>
+    <h2 class="section-title">the key point 3</h2>
+
+    <div class="kp-section">
+      <div class="kp-num">01</div>
+      <div class="kp-tag">홍익인간 이념 선포</div>
+      <p class="kp-body">환웅은 스스로 인간 세상을 구원하겠다는 자발적 의지를 품고, 환인의 승인과 천부인을 통해 "널리 인간 세상을 이롭게 할 만하구나"라는 건국 이념을 선포받았다. 이는 지배자의 권위가 폭력이 아니라 이타적 도덕에 뿌리를 두고 있음을 증명하며, 적강 모티프와 명확히 구별되는 자발적 강림의 핵심 근거이다.</p>
+    </div>
+
+    <div class="kp-section">
+      <div class="kp-num">02</div>
+      <div class="kp-tag">통과 의례를 통한 웅녀 탄생</div>
+      <p class="kp-body">곰과 호랑이에게 동일한 조건이 부여되었으나, 금기를 견뎌낸 곰만이 웅녀로 부활하고 조급했던 호랑이는 탈락했다. 이는 토착 부족의 인내와 자기 극복이 선진 문명 편입의 자격을 결정했음을 상징하며, 쑥·마늘·동굴이라는 소재가 주술적 정화와 죽음-부활의 제의적 구조를 형성한다.</p>
+    </div>
+
+    <div class="kp-section">
+      <div class="kp-num">03</div>
+      <div class="kp-tag">산신 좌정 결말</div>
+      <p class="kp-body">천오백 년의 평화 통치를 마친 단군왕검은 하늘로 승천하지 않고 아사달의 산신으로 좌정하여 민족의 영원한 수호자가 되었다. 이는 천상 복귀가 아니라 토속적 산신 신앙과 결합한 지상 영속의 결말이며, 어떠한 시련 속에서도 민족의 뿌리가 단절되지 않으리라는 영속적 위안을 부여하는 서사적 장치이다.</p>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══ [CLOSING] ═══ -->
+<div class="section" id="closing">
+  <div class="section-inner">
+    <div class="closing">
+      <div class="closing-text">
+        신화는 과거의 유물이 아니라 현재를 살아가는 우리의 <em>뿌리</em>이다.<br>
+        하늘의 뜻과 땅의 열망이 만나 빚어낸 이 장대한 서사를 기억하라.<br>
+        시험장에서 단군신화를 마주하는 순간, 당신은 이미 준비되어 있다.
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="closing-banner">
+  <div class="closing-banner-inner">
+    KOOKKEY THE LECTURE&ensp;·&ensp;단군신화&ensp;·&ensp;THEME-A
+  </div>
+</div>
+
+</body>
+</html>
